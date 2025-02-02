@@ -1,12 +1,18 @@
-    function updateSizeInfo() {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      const sizeInfo = document.getElementById('sizeInfo').querySelector('h1');
-      sizeInfo.textContent = `Width: ${width} and Height: ${height}`;
-    }
+//your JS code here. If required.
+function updateWindowSize() {
+  const widthElement = document.getElementById("width");
+  const heightElement = document.getElementById("height");
 
-    // Event listener for resizing the window
-    window.addEventListener('resize', updateSizeInfo);
+  // Get the window's width and height
+  const width = window.innerWidth;
+  const height = window.innerHeight;
 
-    // Initial size update when the page loads
-    updateSizeInfo();
+  // Update the text content of the <span> elements
+  widthElement.textContent = width;
+  heightElement.textContent = height;
+}
+
+// updateWindowSize();
+
+// Attach the updateWindowSize function to the window resize event
+window.addEventListener("resize", updateWindowSize);
